@@ -1,0 +1,36 @@
+---
+- name: HAProxy Deployment for multiple web server cluster
+  hosts: loadbalancer
+  become: yes
+
+  tasks:
+    - name: Latest version of all requared packages for Web servers installation
+      yum:
+        name:
+          - firewalld
+          - haproxy
+        state: latest
+
+    - name: Configure haproxy
+      copy:
+        src: /home/tkadmin/tk-projectx/files/haproxy.cfg
+        dest: /etc/haproxy/haproxy.cfg
+
+    - name: Firewalld enabled and running
+      service:
+        name: firewalld
+        enabled: true
+        state: started
+
+    - name: firewalld permits for httpd service
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: yes
+
+    - name: HAProxy enabled and running
+      service:
+        name: haproxy
+        enabled: true
+        state: started         
