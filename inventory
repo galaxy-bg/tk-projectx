@@ -1,0 +1,12 @@
+[control]
+ansible-ws
+
+[loadbalancer]
+ansible-lb
+
+[webservers]
+ansible-srva
+ansible-srvb
+
+#[database]
+#ansible-srvc
