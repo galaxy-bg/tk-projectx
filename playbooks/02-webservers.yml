@@ -32,7 +32,7 @@
         enabled: true
         state: started         
 
-    - name: Textkernel test page is installed
+    - name: Customize default index.html page 
       copy:
         content: "<h1> Text Kernel test page ...</h1>"
         dest: /var/www/html/index.html 
