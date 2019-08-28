@@ -1,0 +1,8 @@
+# Load Balancing for apache web farm
+listen {{ lb_ip }}
+    balance roundrobin
+    mode http
+    option tcpka
+    server {{ web01_ip }} check weight 1
+    server {{ web02_ip }} check weight 1
+
