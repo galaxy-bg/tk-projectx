@@ -4,7 +4,7 @@
   become: yes
 
   tasks:
-    - name: Latest version of all requared packages for Web servers installation
+    - name: Latest version of all requared packages for HAProxy servers installation
       yum:
         name:
           - firewalld
