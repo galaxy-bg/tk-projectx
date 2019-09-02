@@ -15,7 +15,7 @@ inverntory file has a group webservers with two members;
 ansible-srva
 ansible-srvb
 
-Executing command will install web service, enable firewalld allowing HTTP port and using copy module will copy 2 files index.html (default file ) and info.php (php file show web server IP which can be used to identify server when acces via HAPorxy server IP.
+Executing command will install latest httpd service, enable firewalld allowing HTTP port and using copy module will copy 2 files index.html (customized default html file) and info.php (info.php file shows web server IP which can be used to identify server when acces via HAPorxy server IP.)
 
 $ ansible-playbook playbooks/02-webservers.yml
 
