@@ -1,5 +1,5 @@
 # tk-projectx
-Test assignment project
+## Test assignment project
 
 Assume that we use already deployed EC2/VM or Bare-Metal base os insatlled CentOS 7.5 and reach via SSH connections.
 Based on requarments Textkernel admin user tkadmin is created manually and access to all servers v/a password also have sudo rights.
@@ -11,7 +11,7 @@ before start with implementing code, using common.yml we can ensure that servers
 ```
 $ ansible-playbook playbooks/00-common.yml
 ```
-Web Server installation
+## Web Server installation
 
 inverntory file has a group webservers with three members;
 
@@ -26,7 +26,7 @@ Executing command will install latest httpd service, enable firewalld allowing H
 $ ansible-playbook playbooks/02-webservers.yml
 ```
 
-HAProxy(Loadbalancer) installation
+## HAProxy(Loadbalancer) installation
 
 In case one of web servers become fail or service stoped to not effect end-user experiance and access HAProxy will installed.
 
@@ -37,4 +37,4 @@ Executing command HAProxy enable Firewalld allowing HTTP port and HAProxy.cfg fi
 
 ```
 $ ansible-playbook playbooks/01-loadbalancer.yml
-
+```
