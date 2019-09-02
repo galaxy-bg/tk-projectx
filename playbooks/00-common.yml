@@ -6,7 +6,7 @@
       shell: cat /etc/os-release
       register: response
 
-    - debug: msg="{{ response.stdout }}"
+    - debug: msg="{{ response.stdout }}"    # just visual check not document or save config.
 
     - name: Disable Selinux on LB and Web Servers
       selinux:
