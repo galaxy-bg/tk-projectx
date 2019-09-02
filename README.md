@@ -12,7 +12,7 @@ $ ansible-playbook playbooks/00-common.yml
 
 Web Server installation
 
-inverntory file has a group webservers with two members;
+inverntory file has a group webservers with three members;
 
 [webservers]
 ansible-srva
