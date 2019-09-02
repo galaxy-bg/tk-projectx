@@ -7,6 +7,7 @@ ansible-lb
 [webservers]
 ansible-srva
 ansible-srvb
+ansible-srvc
 
 #[database]
-#ansible-srvc
+#ansible-srvd

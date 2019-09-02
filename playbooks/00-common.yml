@@ -1,0 +1,13 @@
+---
+- hosts: loadbalancer, webservers
+  gather_facts: False
+  tasks:
+    - name: Checkng Dist Version CentOS 7.5
+      shell: cat /etc/os-release
+      register: response
+
+    - debug: msg="{{ response.stdout }}"
+
+    - name: Disable Selinux on LB and Web Servers
+      selinux:
+        state: disabled

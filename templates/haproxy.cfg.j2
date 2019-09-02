@@ -5,4 +5,5 @@ listen {{ lb_ip }}
     option tcpka
     server {{ web01_ip }} check weight 1
     server {{ web02_ip }} check weight 1
+    server {{ web03_ip }} check weight 1
 

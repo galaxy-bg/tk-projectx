@@ -6,6 +6,7 @@
     lb_ip: 'ansible-lb 192.168.88.56:80'
     web01_ip: 'ansible-srva 192.168.88.49:80'
     web02_ip: 'ansible-srvb 192.168.88.55:80'
+    web03_ip: 'ansible-srvb 192.168.88.60:80'
 
   become: yes
 
@@ -26,6 +27,9 @@
       template:
         src: /home/tkadmin/tk-projectx/templates/haproxy.cfg.j2
         dest: /etc/haproxy/haproxy.cfg
+      
+      notify:
+        - restrat_haproxy 
 
     - name: Firewalld enabled and running
       service:
@@ -45,3 +49,12 @@
         name: haproxy
         enabled: true
         state: started         
+
+  handlers: 
+    
+    - name: restart_haproxy
+
+      service:
+        name: haproxy
+        enabled: true
+        state: restarted         
