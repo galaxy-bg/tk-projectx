@@ -1,12 +1,10 @@
 ---
 - hosts: loadbalancer, webservers
-  gather_facts: False
+  gather_facts: True
   tasks:
-    - name: Checkng Dist Version CentOS 7.5
-      shell: cat /etc/os-release
-      register: response
 
-    - debug: msg="{{ response.stdout }}"
+    - name: System details
+      debug: msg={{ ansible_distribution, ansible_distribution_version }}
 
     - name: Disable Selinux on LB and Web Servers
       selinux:
