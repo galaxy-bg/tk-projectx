@@ -1,8 +1,8 @@
 # tk-projectx
-## Test assignment project
+## Test project
 
 Assume that we use already deployed EC2/VM or Bare-Metal base os insatlled CentOS 7.5 and reach via SSH connections.
-Based on requarments Textkernel admin user tkadmin is created manually and access to all servers v/a password also have sudo rights.
+Based on requirements TK admin user tkadmin is created manually and access to all servers v/a password also have sudo rights.
 
 ![im_name](images/tk-projectx-hld.jpg)
 
@@ -28,7 +28,7 @@ $ ansible-playbook playbooks/02-webservers.yml
 
 ## HAProxy(Loadbalancer) installation
 
-In case one of web servers become fail or service stoped to not effect end-user experiance and access HAProxy will installed.
+In case one of web servers become fail or service stoped to not effect end-user experiance and access without interruption Loadbalancer/HAProxy will install.
 
 [loadbalancer]
 ansible-lb
